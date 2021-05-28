@@ -1,10 +1,10 @@
 [
   {
-    "pattern": "^docs/classes/",
-    "replace": "https://daubejb.github.io/chatgoogleappsscript/docs/classes/"
+    "pattern": "^docs/classes/*$",
+    "replace": "https://daubejb.github.io/chatgoogleappsscript/docs/classes/*$"
   },
   {
-    "pattern": "^docs/enums/",
-    "replace": "https://daubejb.github.io/chatgoogleappsscript/docs/enums/"
+    "pattern": "^docs/enums/*$",
+    "replace": "https://daubejb.github.io/chatgoogleappsscript/docs/enums/*$"
   }
 ]
