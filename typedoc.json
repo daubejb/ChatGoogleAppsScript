@@ -1,5 +1,4 @@
 {
   "entryPoints": ["src/Chatapp.ts"],
-  "out": "docs",
-  "sourcefile-url-prefix": "https://daubejb.github.io/ChatGoogleAppsScript/"
+  "out": "docs"
 }
