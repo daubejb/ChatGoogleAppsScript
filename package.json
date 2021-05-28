@@ -62,5 +62,8 @@
       "@typescript-eslint/ban-ts-ignore": "off",
       "@typescript-eslint/no-non-null-assertion": "off"
     }
+  },
+  "devDependencies": {
+    "typedoc-plugin-sourcefile-url": "^1.0.6"
   }
 }

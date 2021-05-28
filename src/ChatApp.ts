@@ -327,10 +327,16 @@ class TextParagraph {
   }
 }
 
+/**
+ * Base container for all widgets that can be added to a chat card.
+ */
 class Widget {
   this = {};
 }
 
+/**
+ * Predefined icons that can be used in various objects, such as a {@link ImageButton | ImageButton} or a header icon.
+ */
 enum ICON  {
   AIRPLANE = 'AIRPLANE',
   BED = 'HOTEL_ROOM_TYPE',
@@ -361,6 +367,9 @@ enum ICON  {
   VIDEO_CAMERA = 'VIDEO_CAMERA'
 };
 
+/**
+ * An enum that defines an image cropping style.
+ */
 enum IMAGE_STYLE {
   IMAGE = 'IMAGE',
   AVATAR = 'AVATAR',
