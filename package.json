@@ -8,15 +8,16 @@
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^3.4.0",
     "prettier": "^2.3.0",
-    "typescript": "^4.3.2"
+    "typedoc": "^0.20.36",
+    "typescript": "^4.2.4"
   },
   "name": "chatapp",
   "version": "1.0.0",
   "main": "index.js",
-  "devDependencies": {},
   "scripts": {
     "lint": "eslint --color --ext .ts . && tsc || true",
-    "fix": "eslint --color --fix --ext .ts . && tsc || true"
+    "fix": "eslint --color --fix --ext .ts . && tsc || true",
+    "docs": "typedoc --tsconfig ./tsconfig.json --readme ./README.md"
   },
   "keywords": [],
   "author": "",
