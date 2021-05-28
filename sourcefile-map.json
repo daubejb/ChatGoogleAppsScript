@@ -1,14 +1,10 @@
 [
   {
-    "pattern": "^modules/module-one",
-    "replace": "https://daubejb.github.io/chatgoogleappsscript/module-one/"
-  },     
-  {
-    "pattern": "^classes/class-one/",
-    "replace": "https://daubejb.github.io/chatgoogleappsscript/class-one/"
+    "pattern": "^docs/classes/class-one/",
+    "replace": "https://daubejb.github.io/chatgoogleappsscript/docs/classes/class-one/"
   },
   {
-    "pattern": "^classes/enums/enum-one",
-    "replace": "https://daubejb.github.io/chatgoogleappsscript/enum-one/"
+    "pattern": "^docs/enums/enum-one",
+    "replace": "https://daubejb.github.io/chatgoogleappsscript/docs/enums/enum-one/"
   }
 ]
