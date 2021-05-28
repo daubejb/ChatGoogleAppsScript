@@ -242,46 +242,85 @@ class OpenLink {
   }
 }
 
-
+/**
+ * A Section holds a group of {@link @Widget | Widgets } and provides visual separation between them.
+ */
 class Section {
   header = "";
   widgets: Widget[] = [];
 
+  /**
+   * Sets the header of the section.  Optional.
+   * @param header - The header text.
+   * @returns This object, for chaining.
+   */
   setHeader(header: string) {
     this.header = header;
     return this;
   }
 
+  /**
+   * Adds the given widget to this section. Widgets are shown in the order they were added.
+   * @param widget - A widget to add to the section
+   * @returns - This object, for chaining.
+   */
   addWidget(widget: Widget) {
     this.widgets.push(widget);
     return this;
   }
 }
 
+/**
+ * A text button with a text Label.
+ */
 class TextButton {
   textButton?: { text: string; onClick?: OpenLink | Action };
 
+  /**
+   * Sets the text that displays on the button.
+   * @param text - The text that appears on the button.
+   * @returns - This object, for chaining.
+   */
   setText(text: string) {
     if (this.textButton === undefined) this.textButton = { text: "" };
     this.textButton.text = text;
     return this;
   }
 
+  /**
+   * Sets a URL to be opened when the object is clicked. Use this method when the URL is already known and only needs to be opened.
+   * @param openLink - An {@link @OpenLink | OpenLink} object for describing the URL to open.
+   * @returns - This object, for chaining.
+   */
   setOpenLink(openLink: OpenLink) {
     if (this.textButton === undefined) this.textButton = { text: "" };
     this.textButton.onClick = openLink;
     return this;
   }
 
+  /**
+   * Sets an action that executes on the server when the object is clicked.
+   * @param action - The action to take when this element is clicked.
+   * @returns - This object, for chaining.
+   */
   setAction(action: Action) {
     if (this.textButton === undefined) this.textButton = { text: "" };
     this.textButton.onClick = action;
+    return this;
   }
 }
 
+/**
+ * A widget that displays text and supports {@link | Basic HTML Card Text Formatting}
+ */
 class TextParagraph {
   textParagraph?: Record<string, unknown>;
 
+  /**
+   * Sets the text of the paragraph.
+   * @param text - The text of the paragraph.
+   * @returns - This object, for chaining.
+   */
   setText(text: string) {
     this.textParagraph = { text: text };
     return this;
