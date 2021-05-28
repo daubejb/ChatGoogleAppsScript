@@ -1,0 +1,14 @@
+[
+  {
+    "pattern": "^modules/module-one",
+    "replace": "https://daubejb.github.io/chatgoogleappsscript/module-one/"
+  },     
+  {
+    "pattern": "^classes/class-one/",
+    "replace": "https://daubejb.github.io/chatgoogleappsscript/class-one/"
+  },
+  {
+    "pattern": "^classes/enums/enum-one",
+    "replace": "https://daubejb.github.io/chatgoogleappsscript/enum-one/"
+  }
+]
