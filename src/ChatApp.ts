@@ -31,10 +31,9 @@ class Action {
     actionMethodName: "",
     parameters: [],
   };
-  
 
   /**
-   * 
+   *
    * @param actionMethodName - Apps Scripts bots must specify action.actionMethodName. To support interactive cards, bots must also define an onClickCard(event) method on the server to handle user clicks.  This method will receive a callback when the user clicks the card.
    * @returns this object, for chaining
    */
@@ -73,7 +72,7 @@ class ButtonSet {
 
   /**
    * Adds an image button
-   * @param button - The image button to add. 
+   * @param button - The image button to add.
    */
   addImageButton(button: ImageButton) {
     this.buttons.push(button);
@@ -84,7 +83,6 @@ class ButtonSet {
  * A Google Chat {@link https://developers.google.com/chat/reference/message-formats/cards | card}
  */
 class Card {
-
   header?: Header;
   sections: Section[] = [];
 
@@ -116,20 +114,20 @@ class CardBuilder {
     return this;
   }
 
-  /** 
+  /**
    * Adds a section to this card
    * @param section - The Section to use.
-   * @returns CardBuilder - This object, for chaining 
-  */
+   * @returns CardBuilder - This object, for chaining
+   */
   addSection(section: Section) {
     this.card.sections.push(section);
     return this;
   }
 
   /**
-   * Builds the current card 
+   * Builds the current card
    * @returns - A card.
-   */ 
+   */
   build() {
     return this.card;
   }
@@ -194,7 +192,7 @@ class ImageButton {
   /**
    * Sets the URL of an image to use as this button's icon.
    * @param iconUrl - The URL address of a hosted image to use as this button's icon.
-   * @return - this object for chaining 
+   * @return - this object for chaining
    */
   setIconUrl(iconUrl: string) {
     if (this.imageButton === undefined) this.imageButton = {};
@@ -221,6 +219,56 @@ class ImageButton {
   setOnClick(onClick: Action | OpenLink) {
     if (this.imageButton === undefined) this.imageButton = {};
     this.imageButton.onClick = onClick;
+    return this;
+  }
+}
+
+/**
+ * Represents a key value widget
+ */
+class KeyValue {
+  keyValue: KeyValueType;
+  constructor(keyValue: KeyValueType) {
+    this.keyValue = keyValue;
+  }
+
+  /**
+   * The optional bottom label of the key value widget.
+   * @param bottomLabel - The bottom label text.
+   * @returns - This object, for chaining.
+   */
+  setBottomLabel(bottomLabel: string) {
+    this.keyValue.bottomLabel = bottomLabel;
+    return this;
+  }
+
+  /**
+   * Sets an action that executes when the object is clicked.
+   * @param onClick - The action to take when this element is clicked.
+   * @returns - This object, for chaining.
+   */
+  setOnClick(onClick: Action | OpenLink) {
+    this.keyValue.onClick = onClick;
+    return this;
+  }
+
+  /**
+   * Sets an optional icon to display for the key value widget
+   * @param icon - The options icon
+   * @returns - This object, for chaining.
+   */
+  setIcon(icon: Icon) {
+    this.keyValue.icon = icon;
+    return this;
+  }
+
+  /**
+   * Sets an optional button to display for the key value widget.
+   * @param button - The optional button.
+   * @returns - This object, for chaining.
+   */
+  setButton(button: ImageButton | TextButton) {
+    this.keyValue.button = button;
     return this;
   }
 }
@@ -337,40 +385,40 @@ class Widget {
 /**
  * Predefined icons that can be used in various objects, such as a {@link ImageButton | ImageButton} or a header icon.
  */
-enum ICON  {
-  AIRPLANE = 'AIRPLANE',
-  BED = 'HOTEL_ROOM_TYPE',
-  BOOKMARK = 'BOOKMARK',
-  BUS = 'BUS',
-  CAR = 'CAR',
-  CALENDAR = 'INVITE',
-  CHAIR = 'EVENT_SEAT',
-  CLOCK = 'CLOCK',
-  CONF_NUM_ICON = 'CONFIRMATION_NUMBER_ICON',
-  DESCRIPTION = 'DESCRIPTION',
-  DOLLAR = 'DOLLAR',
-  EMAIL = 'EMAIL',
-  FLIGHT_ARRIVAL = 'FLIGHT_ARRIVAL',
-  FLIGHT_DEPARTURE = 'FLIGHT_DEPARTURE',
-  FORK_AND_KNIFE = 'RESTAURANT_ICON',
-  MAP_PIN = 'MAP_PIN',
-  MEMBERSHIP = 'MEMBERSHIP',
-  PEOPLE = 'MULTIPLE_PEOPLE',
-  PERSON = 'PERSON',
-  PHONE = 'PHONE',
-  PLAY_BUTTON = 'VIDEO_PLAY',
-  SHOPPING_CART = 'SHOPPING_CART',
-  STAR = 'STAR',
-  STORE = 'STORE',
-  TICKET = 'TICKET',
-  TRAIN = 'TRAIN',
-  VIDEO_CAMERA = 'VIDEO_CAMERA'
-};
+enum ICON {
+  AIRPLANE = "AIRPLANE",
+  BED = "HOTEL_ROOM_TYPE",
+  BOOKMARK = "BOOKMARK",
+  BUS = "BUS",
+  CAR = "CAR",
+  CALENDAR = "INVITE",
+  CHAIR = "EVENT_SEAT",
+  CLOCK = "CLOCK",
+  CONF_NUM_ICON = "CONFIRMATION_NUMBER_ICON",
+  DESCRIPTION = "DESCRIPTION",
+  DOLLAR = "DOLLAR",
+  EMAIL = "EMAIL",
+  FLIGHT_ARRIVAL = "FLIGHT_ARRIVAL",
+  FLIGHT_DEPARTURE = "FLIGHT_DEPARTURE",
+  FORK_AND_KNIFE = "RESTAURANT_ICON",
+  MAP_PIN = "MAP_PIN",
+  MEMBERSHIP = "MEMBERSHIP",
+  PEOPLE = "MULTIPLE_PEOPLE",
+  PERSON = "PERSON",
+  PHONE = "PHONE",
+  PLAY_BUTTON = "VIDEO_PLAY",
+  SHOPPING_CART = "SHOPPING_CART",
+  STAR = "STAR",
+  STORE = "STORE",
+  TICKET = "TICKET",
+  TRAIN = "TRAIN",
+  VIDEO_CAMERA = "VIDEO_CAMERA",
+}
 
 /**
  * An enum that defines an image cropping style.
  */
 enum IMAGE_STYLE {
-  IMAGE = 'IMAGE',
-  AVATAR = 'AVATAR',
-};
+  IMAGE = "IMAGE",
+  AVATAR = "AVATAR",
+}

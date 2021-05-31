@@ -1,25 +1,25 @@
 type Icon =
   | "AIRPLANE"
-  | "HOTEL"
+  | "BED"
   | "BOOKMARK"
   | "BUS"
   | "CAR"
-  | "INVITE"
-  | "EVENT_SEAT"
+  | "CALENDAR"
+  | "CHAIR"
   | "CLOCK"
-  | "CONFIRMATION_NUMBER_ICON"
+  | "CONF_NUM_ICON"
   | "DESCRIPTION"
   | "DOLLAR"
   | "EMAIL"
   | "FLIGHT_ARRIVAL"
   | "FLIGHT_DEPARTURE"
-  | "RESTAURANT_ICON"
+  | "FORK_AND_KNIFE"
   | "MAP_PIN"
   | "MEMBERSHIP"
   | "PEOPLE"
   | "PERSON"
   | "PHONE"
-  | "VIDEO_PLAY"
+  | "PLAY_BUTTON"
   | "SHOPPING_CART"
   | "STAR"
   | "STORE"
@@ -27,9 +27,7 @@ type Icon =
   | "TRAIN"
   | "VIDEO_CAMERA";
 
-type ImageStyle =
-  | "AVATAR"
-  | "IMAGE";
+type ImageStyle = "AVATAR" | "IMAGE";
 
 type Parameter = {
   key: string;
@@ -37,3 +35,12 @@ type Parameter = {
 };
 
 type ButtonType = "textButton" | "imageButton";
+
+type KeyValueType = {
+  topLabel: string;
+  content: string;
+  bottomLabel?: string;
+  onClick?: Action | OpenLink;
+  icon?: Icon;
+  button?: ImageButton | TextButton;
+};
