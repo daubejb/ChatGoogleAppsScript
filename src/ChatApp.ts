@@ -13,6 +13,9 @@ function newTextParagraph() {
 function newTextButton() {
   return new TextButton();
 }
+function newImageButton() {
+  return new ImageButton();
+}
 function newOpenLink() {
   return new OpenLink();
 }
@@ -27,7 +30,7 @@ function newButtonSet() {
  * An action that enables interactivity with the Chat card.  The Action does not happen directly on the client but rather invokes an Apps Script callback function with optional parameters.
  */
 class Action {
-  action: { actionMethodName: string; parameters: Parameter[] } = {
+  action: { actionMethodName: string, parameters: Parameter[] } = {
     actionMethodName: "",
     parameters: [],
   };
@@ -58,7 +61,6 @@ class Action {
  */
 class ButtonSet {
   buttons: (TextButton | ImageButton)[] = [];
-  constructor() {}
 
   /**
    * Adds a text button
@@ -73,9 +75,11 @@ class ButtonSet {
   /**
    * Adds an image button
    * @param button - The image button to add.
+   * @returns This object, for chaining.
    */
   addImageButton(button: ImageButton) {
     this.buttons.push(button);
+    return this;
   }
 }
 
